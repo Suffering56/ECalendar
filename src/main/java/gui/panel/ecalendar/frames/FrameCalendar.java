@@ -59,7 +59,7 @@ public class FrameCalendar extends DataFrame {
 
 	public FrameCalendar() {
 		render("ecalendar/FrameCalendar", false);
-		
+		 
 		frame.setMinimumSize(frame.getSize());
 		frame.setLocationRelativeTo(null);
 	}
