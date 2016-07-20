@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<frame resizable="true" title="Фильтр таблицы" defaultCloseOperation="JFrame.DISPOSE"
+	IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
+	<panel name="interpanel">
+		<layout type="FormLayout" columns="f:p:g" rows="f:p, 1px, f:p:g, 10px, f:p, 10px" />
+
+		<panel constraints="1,1">
+			<layout type="FormLayout" columns="10px, f:p, f:p, 10px:g, f:p, f:p, p:g, r:p, 10px" rows="10px, f:p, 5px" />
+
+			<label constraints="2,2" name="ec.filters.label" text="Таблица:  " />
+			<label constraints="3,2" name="ec.filters.label.bold" text="Экономический календарь" />
+			<label constraints="5,2" name="ec.filters.label" text="Поле:  " />
+			<label constraints="6,2" name="ec.filters.label.bold" text="Категория" />
+			<checkbox constraints="8,2" name="ec.filters.checkbox" id="enableCheckBox" text="Включить" selected="true" />
+		</panel>
+
+		<separator constraints="1,2" />
+
+		<panel constraints="1,3" id="contentPanel" />
+
+		<panel constraints="1,5">
+			<layout type="FormLayout" columns="10px, f:p, p:g, f:100px, 10px, f:100px, 10px" rows="f:p" />
+			<checkbox constraints="2,1" id="globalCheckBox" text="Все категории" action="ALL_CATEGORIES_ACTION" />
+			<button constraints="4,1" name="ec.main_button" text="Применить" action="APPLY_ACTION" />
+			<button constraints="6,1" name="ec.main_button" text="Отменить" action="CANCEL_ACTION" />
+		</panel>
+	</panel>
+</frame>

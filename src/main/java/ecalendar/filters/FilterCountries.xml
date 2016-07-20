@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<frame resizable="true" title="Фильтр таблицы" defaultCloseOperation="JFrame.DISPOSE"
+	IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
+	<panel name="interpanel">
+		<layout type="FormLayout" columns="f:p:g" rows="f:p, 1px, f:p:g" />
+
+		<panel constraints="1,1">
+			<layout type="FormLayout" columns="10px, f:p, f:p, 10px:g, f:p, f:p, p:g, r:p, 10px" rows="10px, f:p, 5px" />
+
+			<label constraints="2,2" name="ec.filters.label" text="Таблица:  " />
+			<label constraints="3,2" name="ec.filters.label.bold" text="Экономический календарь" />
+			<label constraints="5,2" name="ec.filters.label" text="Поле:  " />
+			<label constraints="6,2" name="ec.filters.label.bold" text="Страна" />
+			<checkbox constraints="8,2" name="ec.filters.checkbox" id="enableCheckBox" text="Включить" selected="true" />
+		</panel>
+
+		<separator constraints="1,2" />
+
+		<panel constraints="1,3">
+			<layout type="FormLayout"
+				columns="10px, f:p, 3px, f:p, 3px, f:p, 15px:g, f:p, 3px, f:p, 3px, f:p, 15px:g, f:p, 3px, f:p, 3px, f:p, f:p, 10px"
+				rows="10px:g, 
+			20px, 20px, 20px, 20px, 20px,  
+			20px, 20px, 20px, 20px, 20px,  
+			20px, 20px, 20px, 20px, 20px,  
+			20px, 20px, 20px, 20px, 20px, 
+			20px, 20px, 20px, 20px, 20px,  
+			20px, 20px, 20px, 20px, 20px, 
+			10px, 20px, 10px:g" />
+
+			<!-- =============================col=1================================== -->
+
+			<checkbox constraints="2,2" id="australia" name="Australia" />
+			<label constraints="4,2" icon="configs/GRAPHITE/style/img/ecalendar/flags/australia.png" />
+			<label constraints="6,2" text="Австралия" />
+
+			<checkbox constraints="2,3" id="austria" name="Austria" />
+			<label constraints="4,3" icon="configs/GRAPHITE/style/img/ecalendar/flags/austria.png" />
+			<label constraints="6,3" text="Австрия" />
+
+			<checkbox constraints="2,4" id="argentina" name="Argentina" />
+			<label constraints="4,4" icon="configs/GRAPHITE/style/img/ecalendar/flags/argentina.png" />
+			<label constraints="6,4" text="Аргентина" />
+
+			<checkbox constraints="2,5" id="bahrain" name="Bahrain" />
+			<label constraints="4,5" icon="configs/GRAPHITE/style/img/ecalendar/flags/bahrain.png" />
+			<label constraints="6,5" text="Бахрейн" />
+
+			<checkbox constraints="2,6" id="belgium" name="Belgium" />
+			<label constraints="4,6" icon="configs/GRAPHITE/style/img/ecalendar/flags/belgium.png" />
+			<label constraints="6,6" text="Бельгия" />
+
+			<checkbox constraints="2,7" id="bulgaria" name="Bulgaria" />
+			<label constraints="4,7" icon="configs/GRAPHITE/style/img/ecalendar/flags/bulgaria.png" />
+			<label constraints="6,7" text="Болгария" />
+
+			<checkbox constraints="2,8" id="bosnia" name="Bosnia" />
+			<label constraints="4,8" icon="configs/GRAPHITE/style/img/ecalendar/flags/bosnia.png" />
+			<label constraints="6,8" text="Босния" />
+
+			<checkbox constraints="2,9" id="botswana" name="Botswana" />
+			<label constraints="4,9" icon="configs/GRAPHITE/style/img/ecalendar/flags/botswana.png" />
+			<label constraints="6,9" text="Ботсвана" />
+
+			<checkbox constraints="2,10" id="brazil" name="Brazil" />
+			<label constraints="4,10" icon="configs/GRAPHITE/style/img/ecalendar/flags/brazil.png" />
+			<label constraints="6,10" text="Бразилия" />
+
+			<checkbox constraints="2,11" id="unitedKingdom" name="United_Kingdom" />
+			<label constraints="4,11" icon="configs/GRAPHITE/style/img/ecalendar/flags/united-kingdom.png" />
+			<label constraints="6,11" text="Великобритания" />
+
+			<checkbox constraints="2,12" id="hungary" name="Hungary" />
+			<label constraints="4,12" icon="configs/GRAPHITE/style/img/ecalendar/flags/hungary.png" />
+			<label constraints="6,12" text="Венгрия" />
+
+			<checkbox constraints="2,13" id="venezuela" name="Venezuela" />
+			<label constraints="4,13" icon="configs/GRAPHITE/style/img/ecalendar/flags/venezuela.png" />
+			<label constraints="6,13" text="Венесуэла" />
+
+			<checkbox constraints="2,14" id="vietnam" name="Vietnam" />
+			<label constraints="4,14" icon="configs/GRAPHITE/style/img/ecalendar/flags/vietnam.png" />
+			<label constraints="6,14" text="Вьетнам" />
+
+			<checkbox constraints="2,15" id="germany" name="Germany" />
+			<label constraints="4,15" icon="configs/GRAPHITE/style/img/ecalendar/flags/germany.png" />
+			<label constraints="6,15" text="Германия" />
+
+			<checkbox constraints="2,16" id="hongKong" name="HongKong" />
+			<label constraints="4,16" icon="configs/GRAPHITE/style/img/ecalendar/flags/hong-kong.png" />
+			<label constraints="6,16" text="Гонконг" />
+
+			<checkbox constraints="2,17" id="greece" name="GR" />
+			<label constraints="4,17" icon="configs/GRAPHITE/style/img/ecalendar/flags/greece.png" />
+			<label constraints="6,17" text="Греция" />
+
+			<checkbox constraints="2,18" id="denmark" name="Denmark" />
+			<label constraints="4,18" icon="configs/GRAPHITE/style/img/ecalendar/flags/denmark.png" />
+			<label constraints="6,18" text="Дания" />
+
+			<checkbox constraints="2,19" id="europeanUnion" name="Euro_Area" />
+			<label constraints="4,19" icon="configs/GRAPHITE/style/img/ecalendar/flags/european-union.png" />
+			<label constraints="6,19" text="Еврозона" />
+
+			<checkbox constraints="2,20" id="egypt" name="Egypt" />
+			<label constraints="4,20" icon="configs/GRAPHITE/style/img/ecalendar/flags/egypt.png" />
+			<label constraints="6,20" text="Египет" />
+
+			<checkbox constraints="2,21" id="zambia" name="Zambia" />
+			<label constraints="4,21" icon="configs/GRAPHITE/style/img/ecalendar/flags/zambia.png" />
+			<label constraints="6,21" text="Замбия" />
+
+			<checkbox constraints="2,22" id="zimbabwe" name="Zimbabwe" />
+			<label constraints="4,22" icon="configs/GRAPHITE/style/img/ecalendar/flags/zimbabwe.png" />
+			<label constraints="6,22" text="Зимбабве" />
+
+			<checkbox constraints="2,23" id="israel" name="Israel" />
+			<label constraints="4,23" icon="configs/GRAPHITE/style/img/ecalendar/flags/israel.png" />
+			<label constraints="6,23" text="Израиль" />
+
+			<checkbox constraints="2,24" id="india" name="India" />
+			<label constraints="4,24" icon="configs/GRAPHITE/style/img/ecalendar/flags/india.png" />
+			<label constraints="6,24" text="Индия" />
+
+			<checkbox constraints="2,25" id="indonesia" name="Indonesia" />
+			<label constraints="4,25" icon="configs/GRAPHITE/style/img/ecalendar/flags/indonesia.png" />
+			<label constraints="6,25" text="Индонезия" />
+
+			<checkbox constraints="2,26" id="jordan" name="Jordan" />
+			<label constraints="4,26" icon="configs/GRAPHITE/style/img/ecalendar/flags/jordan.png" />
+			<label constraints="6,26" text="Иордания" />
+
+			<checkbox constraints="2,27" id="ireland" name="Ireland" />
+			<label constraints="4,27" icon="configs/GRAPHITE/style/img/ecalendar/flags/ireland.png" />
+			<label constraints="6,27" text="Ирландия" />
+
+			<checkbox constraints="2,28" id="iceland" name="Iceland" />
+			<label constraints="4,28" icon="configs/GRAPHITE/style/img/ecalendar/flags/iceland.png" />
+			<label constraints="6,28" text="Исландия" />
+
+			<checkbox constraints="2,29" id="spain" name="Spain" />
+			<label constraints="4,29" icon="configs/GRAPHITE/style/img/ecalendar/flags/spain.png" />
+			<label constraints="6,29" text="Испания" />
+
+			<checkbox constraints="2,30" id="italy" name="IT" />
+			<label constraints="4,30" icon="configs/GRAPHITE/style/img/ecalendar/flags/it.png" />
+			<label constraints="6,30" text="Италия" />
+
+			<checkbox constraints="2,31" id="canada" name="Canada" />
+			<label constraints="4,31" icon="configs/GRAPHITE/style/img/ecalendar/flags/canada.png" />
+			<label constraints="6,31" text="Канада" />
+
+			<!-- =============================col=2================================== -->
+
+			<checkbox constraints="8,2" id="qatar" name="Qatar" />
+			<label constraints="10,2" icon="configs/GRAPHITE/style/img/ecalendar/flags/qatar.png" />
+			<label constraints="12,2" text="Катар" />
+
+			<checkbox constraints="8,3" id="kenya" name="Kenya" />
+			<label constraints="10,3" icon="configs/GRAPHITE/style/img/ecalendar/flags/kenya.png" />
+			<label constraints="12,3" text="Кения" />
+
+			<checkbox constraints="8,4" id="cyprus" name="Cyprus" />
+			<label constraints="10,4" icon="configs/GRAPHITE/style/img/ecalendar/flags/cyprus.png" />
+			<label constraints="12,4" text="Кипр" />
+
+			<checkbox constraints="8,5" id="china" name="China" />
+			<label constraints="10,5" icon="configs/GRAPHITE/style/img/ecalendar/flags/china.png" />
+			<label constraints="12,5" text="Китай" />
+
+			<checkbox constraints="8,6" id="colombia" name="Colombia" />
+			<label constraints="10,6" icon="configs/GRAPHITE/style/img/ecalendar/flags/colombia.png" />
+			<label constraints="12,6" text="Колумбия" />
+
+			<checkbox constraints="8,7" id="costaRica" name="CostaRica" />
+			<label constraints="10,7" icon="configs/GRAPHITE/style/img/ecalendar/flags/costa-rica.png" />
+			<label constraints="12,7" text="Коста-Рика" />
+
+			<checkbox constraints="8,8" id="kuwait" name="Cuwait" />
+			<label constraints="10,8" icon="configs/GRAPHITE/style/img/ecalendar/flags/kuwait.png" />
+			<label constraints="12,8" text="Кувейт" />
+
+			<checkbox constraints="8,9" id="latvia" name="Latvia" />
+			<label constraints="10,9" icon="configs/GRAPHITE/style/img/ecalendar/flags/latvia.png" />
+			<label constraints="12,9" text="Латвия" />
+
+			<checkbox constraints="8,10" id="lebanon" name="Lebanon" />
+			<label constraints="10,10" icon="configs/GRAPHITE/style/img/ecalendar/flags/lebanon.png" />
+			<label constraints="12,10" text="Ливан" />
+
+			<checkbox constraints="8,11" id="lithuania" name="Lithuania" />
+			<label constraints="10,11" icon="configs/GRAPHITE/style/img/ecalendar/flags/lithuania.png" />
+			<label constraints="12,11" text="Литва" />
+
+			<checkbox constraints="8,12" id="luxembourg" name="Luxembourg" />
+			<label constraints="10,12" icon="configs/GRAPHITE/style/img/ecalendar/flags/luxembourg.png" />
+			<label constraints="12,12" text="Люксембург" />
+
+			<checkbox constraints="8,13" id="mauritius" name="Mauritius" />
+			<label constraints="10,13" icon="configs/GRAPHITE/style/img/ecalendar/flags/mauritius.png" />
+			<label constraints="12,13" text="Маврикий" />
+
+			<checkbox constraints="8,14" id="malawi" name="Malawi" />
+			<label constraints="10,14" icon="configs/GRAPHITE/style/img/ecalendar/flags/malawi.png" />
+			<label constraints="12,14" text="Малави" />
+
+			<checkbox constraints="8,15" id="malaysia" name="Malaysia" />
+			<label constraints="10,15" icon="configs/GRAPHITE/style/img/ecalendar/flags/malaysia.png" />
+			<label constraints="12,15" text="Малайзия" />
+
+			<checkbox constraints="8,16" id="malta" name="Malta" />
+			<label constraints="10,16" icon="configs/GRAPHITE/style/img/ecalendar/flags/malta.png" />
+			<label constraints="12,16" text="Мальта" />
+
+			<checkbox constraints="8,17" id="morocco" name="Morocco" />
+			<label constraints="10,17" icon="configs/GRAPHITE/style/img/ecalendar/flags/morocco.png" />
+			<label constraints="12,17" text="Марокко" />
+
+			<checkbox constraints="8,18" id="mexico" name="Mexico" />
+			<label constraints="10,18" icon="configs/GRAPHITE/style/img/ecalendar/flags/mexico.png" />
+			<label constraints="12,18" text="Мексика" />
+
+			<checkbox constraints="8,19" id="namibia" name="Namibia" />
+			<label constraints="10,19" icon="configs/GRAPHITE/style/img/ecalendar/flags/namibia.png" />
+			<label constraints="12,19" text="Намибия" />
+
+			<checkbox constraints="8,20" id="nigeria" name="Nigeria" />
+			<label constraints="10,20" icon="configs/GRAPHITE/style/img/ecalendar/flags/nigeria.png" />
+			<label constraints="12,20" text="Нигерия" />
+
+			<checkbox constraints="8,21" id="netherlands" name="Netherlands" />
+			<label constraints="10,21" icon="configs/GRAPHITE/style/img/ecalendar/flags/netherlands.png" />
+			<label constraints="12,21" text="Нидерланды" />
+
+			<checkbox constraints="8,22" id="newZealand" name="New_Zealand" />
+			<label constraints="10,22" icon="configs/GRAPHITE/style/img/ecalendar/flags/new-zealand.png" />
+			<label constraints="12,22" text="Новая Зеландия" />
+
+			<checkbox constraints="8,23" id="norway" name="Norway" />
+			<label constraints="10,23" icon="configs/GRAPHITE/style/img/ecalendar/flags/norway.png" />
+			<label constraints="12,23" text="Норвегия" />
+
+			<checkbox constraints="8,24" id="unitedArabEmirates" name="UnitedArabEmirates" />
+			<label constraints="10,24" icon="configs/GRAPHITE/style/img/ecalendar/flags/uae.png" />
+			<label constraints="12,24" text="ОАЭ" />
+
+			<checkbox constraints="8,25" id="oman" name="Oman" />
+			<label constraints="10,25" icon="configs/GRAPHITE/style/img/ecalendar/flags/oman.png" />
+			<label constraints="12,25" text="Оман" />
+
+			<checkbox constraints="8,26" id="palestine" name="Palestine" />
+			<label constraints="10,26" icon="configs/GRAPHITE/style/img/ecalendar/flags/palestine.png" />
+			<label constraints="12,26" text="ПА" />
+
+			<checkbox constraints="8,27" id="pakistan" name="Pakistan" />
+			<label constraints="10,27" icon="configs/GRAPHITE/style/img/ecalendar/flags/pakistan.png" />
+			<label constraints="12,27" text="Пакистан" />
+
+			<checkbox constraints="8,28" id="peru" name="Peru" />
+			<label constraints="10,28" icon="configs/GRAPHITE/style/img/ecalendar/flags/peru.png" />
+			<label constraints="12,28" text="Перу" />
+
+			<checkbox constraints="8,29" id="poland" name="Poland" />
+			<label constraints="10,29" icon="configs/GRAPHITE/style/img/ecalendar/flags/poland.png" />
+			<label constraints="12,29" text="Польша" />
+
+			<checkbox constraints="8,30" id="portugal" name="Portugal" />
+			<label constraints="10,30" icon="configs/GRAPHITE/style/img/ecalendar/flags/portugal.png" />
+			<label constraints="12,30" text="Португалия" />
+
+			<checkbox constraints="8,31" id="russia" name="Russia" />
+			<label constraints="10,31" icon="configs/GRAPHITE/style/img/ecalendar/flags/russia.png" />
+			<label constraints="12,31" text="Россия" />
+
+			<!-- =============================col=3================================== -->
+
+			<checkbox constraints="14,2" id="rwanda" name="Rwanda" />
+			<label constraints="16,2" icon="configs/GRAPHITE/style/img/ecalendar/flags/rwanda.png" />
+			<label constraints="18,2" text="Руанда" />
+
+			<checkbox constraints="14,3" id="romania" name="Romania" />
+			<label constraints="16,3" icon="configs/GRAPHITE/style/img/ecalendar/flags/romania.png" />
+			<label constraints="18,3" text="Румыния" />
+
+			<checkbox constraints="14,4" id="saudiArabia" name="SaudiArabia" />
+			<label constraints="16,4" icon="configs/GRAPHITE/style/img/ecalendar/flags/saudi-arabia.png" />
+			<label constraints="18,4" text="Саудовская Аравия" />
+
+			<checkbox constraints="14,5" id="singapore" name="Singapore" />
+			<label constraints="16,5" icon="configs/GRAPHITE/style/img/ecalendar/flags/singapore.png" />
+			<label constraints="18,5" text="Сингапур" />
+
+			<checkbox constraints="14,6" id="slovakia" name="Slovakia" />
+			<label constraints="16,6" icon="configs/GRAPHITE/style/img/ecalendar/flags/slovakia.png" />
+			<label constraints="18,6" text="Словакия" />
+
+			<checkbox constraints="14,7" id="slovenia" name="Slovenia" />
+			<label constraints="16,7" icon="configs/GRAPHITE/style/img/ecalendar/flags/slovenia.png" />
+			<label constraints="18,7" text="Словения" />
+
+			<checkbox constraints="14,8" id="unitedStates" name="United_States" />
+			<label constraints="16,8" icon="configs/GRAPHITE/style/img/ecalendar/flags/united-states.png" />
+			<label constraints="18,8" text="США" />
+
+			<checkbox constraints="14,9" id="thailand" name="Thailand" />
+			<label constraints="16,9" icon="configs/GRAPHITE/style/img/ecalendar/flags/thailand.png" />
+			<label constraints="18,9" text="Таиланд" />
+
+			<checkbox constraints="14,10" id="taiwan" name="Taiwan" />
+			<label constraints="16,10" icon="configs/GRAPHITE/style/img/ecalendar/flags/taiwan.png" />
+			<label constraints="18,10" text="Тайвань" />
+
+			<checkbox constraints="14,11" id="tanzania" name="Tanzania" />
+			<label constraints="16,11" icon="configs/GRAPHITE/style/img/ecalendar/flags/tanzania.png" />
+			<label constraints="18,11" text="Танзания" />
+
+			<checkbox constraints="14,12" id="tunisia" name="Tunisia" />
+			<label constraints="16,12" icon="configs/GRAPHITE/style/img/ecalendar/flags/tunisia.png" />
+			<label constraints="18,12" text="Тунис" />
+
+			<checkbox constraints="14,13" id="turkey" name="Turkey" />
+			<label constraints="16,13" icon="configs/GRAPHITE/style/img/ecalendar/flags/turkey.png" />
+			<label constraints="18,13" text="Турция" />
+
+			<checkbox constraints="14,14" id="uganda" name="Uganda" />
+			<label constraints="16,14" icon="configs/GRAPHITE/style/img/ecalendar/flags/uganda.png" />
+			<label constraints="18,14" text="Уганда" />
+
+			<checkbox constraints="14,15" id="ukraine" name="Ukraine" />
+			<label constraints="16,15" icon="configs/GRAPHITE/style/img/ecalendar/flags/ukraine.png" />
+			<label constraints="18,15" text="Украина" />
+
+			<checkbox constraints="14,16" id="philippines" name="Uhilippines" />
+			<label constraints="16,16" icon="configs/GRAPHITE/style/img/ecalendar/flags/philippines.png" />
+			<label constraints="18,16" text="Филиппины" />
+
+			<checkbox constraints="14,17" id="finland" name="Finland" />
+			<label constraints="16,17" icon="configs/GRAPHITE/style/img/ecalendar/flags/finland.png" />
+			<label constraints="18,17" text="Финляндия" />
+
+			<checkbox constraints="14,18" id="france" name="France" />
+			<label constraints="16,18" icon="configs/GRAPHITE/style/img/ecalendar/flags/france.png" />
+			<label constraints="18,18" text="Франция" />
+
+			<checkbox constraints="14,19" id="croatia" name="Croatia" />
+			<label constraints="16,19" icon="configs/GRAPHITE/style/img/ecalendar/flags/croatia.png" />
+			<label constraints="18,19" text="Хорватия" />
+
+			<checkbox constraints="14,20" id="czechRepublic" name="CzechRepublic" />
+			<label constraints="16,20" icon="configs/GRAPHITE/style/img/ecalendar/flags/czech-republic.png" />
+			<label constraints="18,20" text="Чехия" />
+
+			<checkbox constraints="14,21" id="chile" name="Chile" />
+			<label constraints="16,21" icon="configs/GRAPHITE/style/img/ecalendar/flags/chile.png" />
+			<label constraints="18,21" text="Чили" />
+
+			<checkbox constraints="14,22" id="switzerland" name="Switzerland" />
+			<label constraints="16,22" icon="configs/GRAPHITE/style/img/ecalendar/flags/switzerland.png" />
+			<label constraints="18,22" text="Швейцария" />
+
+			<checkbox constraints="14,23" id="sweden" name="Sweden" />
+			<label constraints="16,23" icon="configs/GRAPHITE/style/img/ecalendar/flags/sweden.png" />
+			<label constraints="18,23" text="Швеция" />
+
+			<checkbox constraints="14,24" id="sriLanka" name="SriLanka" />
+			<label constraints="16,24" icon="configs/GRAPHITE/style/img/ecalendar/flags/sri-lanka.png" />
+			<label constraints="18,24" text="Шри-Ланка" />
+
+			<checkbox constraints="14,25" id="ecuador" name="Ecuador" />
+			<label constraints="16,25" icon="configs/GRAPHITE/style/img/ecalendar/flags/ecuador.png" />
+			<label constraints="18,25" text="Эквадор" />
+
+			<checkbox constraints="14,26" id="estonia" name="Estonia" />
+			<label constraints="16,26" icon="configs/GRAPHITE/style/img/ecalendar/flags/estonia.png" />
+			<label constraints="18,26" text="Эстония" />
+
+			<checkbox constraints="14,27" id="southAfrica" name="SouthAfrica" />
+			<label constraints="16,27" icon="configs/GRAPHITE/style/img/ecalendar/flags/south-africa.png" />
+			<label constraints="18,27" text="Южная Африка" />
+
+			<checkbox constraints="14,28" id="southKorea" name="SouthKorea" />
+			<label constraints="16,28" icon="configs/GRAPHITE/style/img/ecalendar/flags/south-korea.png" />
+			<label constraints="18,28" text="Южная Корея" />
+
+			<checkbox constraints="14,29" id="japan" name="Japan" />
+			<label constraints="16,29" icon="configs/GRAPHITE/style/img/ecalendar/flags/japan.png" />
+			<label constraints="18,29" text="Япония" />
+
+			<panel constraints="2,33,9,2">
+				<layout type="FormLayout" columns="p:g, f:p:g, p:g" rows="p" />
+				<checkbox constraints="2,1" id="globalCheckBox" name="globalCheckBox" text="Все страны" action="ALL_COUNTRIES_ACTION"
+					selected="true" />
+			</panel>
+
+			<panel constraints="8,33,11,2">
+				<layout type="FormLayout" columns="p:g, f:p:g, 10px, f:p:g" rows="p" />
+				<button constraints="2,1" name="ec.main_button" text="Применить" action="APPLY_ACTION" />
+				<button constraints="4,1" name="ec.main_button" text="Отменить" action="CANCEL_ACTION" />
+			</panel>
+		</panel>
+
+	</panel>
+</frame>

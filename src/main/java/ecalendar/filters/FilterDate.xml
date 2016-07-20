@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<frame resizable="true" title="Фильтр таблицы" defaultCloseOperation="JFrame.DISPOSE"
+	IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
+	<panel name="interpanel">
+		<layout type="FormLayout" columns="10px, f:p, f:p:g, r:p, 10px"
+			rows="	5px, f:p, 1px, 5px:g, 	
+					p:g, f:p, 5px, f:p, p:g, 
+					5px:g, 1px, 10px, f:p,
+					10px" />
+
+		<panel constraints="2,2,3,1">
+			<layout type="FormLayout" columns="f:p, f:p, 10px, p:g, f:p, f:p, p:g, r:p" rows="f:p, 5px" />
+			<label constraints="1,1" name="ec.filters.label" text="Таблица:  " />
+			<label constraints="2,1" name="ec.filters.label.bold" text="Экономический календарь" />
+			<label constraints="5,1" name="ec.filters.label" text="Поле:  " />
+			<label constraints="6,1" name="ec.filters.label.bold" text="Дата события" />
+			<checkbox constraints="8,1" name="ec.filters.checkbox" id="enableCheckBox" text="Включить" selected="true" />
+		</panel>
+
+		<separator constraints="2,3,3,1" />
+
+		<panel constraints="2,6" id="startDatePanel" border="LineBorder(daf740, 2)">
+			<layout type="FormLayout" columns="2px, f:p:g, 2px" rows="2px, f:p, 2px" />
+			<panel constraints="2,2" id="startDateChildPanel">
+				<layout type="FormLayout" columns="l:p, f:p:g, r:p" rows="f:p, 7px, f:p" />
+				<label constraints="1,1" id="startDateLabel" text="Начальная дата  " editable="false" />
+				<label constraints="3,1" name="ec.filters.label.asterisk" text="*" />
+				<textfield constraints="1,3,3,1" id="startDateField" editable="false" />
+			</panel>
+		</panel>
+
+		<panel constraints="2,8" id="endDatePanel" border="LineBorder(fcaf31, 2)">
+			<layout type="FormLayout" columns="2px, f:p:g, 2px" rows="2px, f:p, 2px" />
+			<panel constraints="2,2" id="endDateChildPanel">
+				<layout type="FormLayout" columns="l:p, f:p:g, r:p" rows="f:p, 7px, f:p" />
+				<label constraints="1,1" id="endDateLabel" text="Конечная дата  " editable="false" />
+				<label constraints="3,1" name="ec.filters.label.asterisk" text="*" />
+				<textfield constraints="1,3,3,1" id="endDateField" editable="false" />
+			</panel>
+		</panel>
+
+		<calendar constraints="4,5,1,5" id="jCalendar" WeekOfYearVisible="false" DayBordersVisible="false" />
+
+		<separator constraints="2,11,3,1" />
+
+		<panel constraints="2,13,3,1" layout="FlowLayout(FlowLayout.RIGHT)">
+			<panel>
+				<layout type="FormLayout" columns="p:g, f:p, 10px, f:p, p:g" rows="f:p" />
+				<button constraints="2,1" name="ec.main_button" text="Применить" action="APPLY_ACTION" />
+				<button constraints="4,1" name="ec.main_button" text="Отменить" action="CANCEL_ACTION" />
+			</panel>
+		</panel>
+
+	</panel>
+</frame>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<frame resizable="true" size="1000,600" title="Экономический календарь" defaultCloseOperation="JFrame.EXIT_ON_CLOSE"
+	IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
+	<panel id="rootPanel" name="DarkGreyPanel">
+		<layout type="FormLayout" columns="5px, f:p:g, 5px" rows="5px, f:p, f:p:g, p, 2px" />
+
+		<panel id="optionsPanel" constraints="2,2" name="ec.interpanel">
+			<layout type="FormLayout" columns="10px, f:p, f:p:g, r:p, 15px" rows="7px, f:p, 7px" />
+			<popupmenu constraints="1,1" id="optionsPopup">
+				<menuitem id="hideOptionsPanelMenuItem" text="Скрыть панель настроек" />
+			</popupmenu>
+
+			<panel constraints="2,2" border="LineBorder(DARK_GRAY, 2)">
+				<layout type="FormLayout" columns="f:p, 10px, f:p" rows="f:p" />
+				<combobox constraints="1,1" id="timeZoneComboBox" initclass="gui.panel.ecalendar.frames.util.timezone.TimeZoneComboModel" />
+				<label constraints="3,1" text="Часовой пояс  " />
+			</panel>
+			<button id="macroShowBtn" constraints="4,2" name="ec.main_button" text="Макростатистика-поиск" />
+		</panel>
+
+		<panel constraints="2,3" id="loadingPanel" visible="true">
+			<layout type="FormLayout" columns="p:g, f:p, p:g" rows="p:g(0.3), f:p, p:g" />
+			<label constraints="2,2" name="upper" icon="configs/GRAPHITE/style/img/anim_wait.gif" text="Подождите, пожалуйста..." />
+		</panel>
+
+		<scrollpane constraints="2,3" id="tableScrollPane" visible="false">
+			<table id="table" name="ec.table">
+				<popupmenu id="headerPopup">
+					<menuitem id="doSortHeaderItem" text="Сортировать" />
+					<menuitem id="setFilterHeaderItem" text="Установить фильтр" />
+					<menuitem id="hideColumnHeaderItem" text="Скрыть колонку" />
+					<separator />
+					<menuitem id="showOptionsPanelMenuItem" text="Показать панель настроек" visible="false" />
+					<separator />
+					<menuitem id="showDateColumnHeaderItem" text="Показать колонку 'Дата события'" visible="false" />
+					<menuitem id="showTimeColumnHeaderItem" text="Показать колонку 'Время события'" visible="false" />
+					<menuitem id="showTimeLeftColumnHeaderItem" text="Показать колонку 'Время до события'" visible="false" />
+					<menuitem id="showCountryColumnHeaderItem" text="Показать колонку 'Страна'" visible="false" />
+					<menuitem id="showImportanceColumnHeaderItem" text="Показать колонку 'Важность'" visible="false" />
+					<menuitem id="showEventColumnHeaderItem" text="Показать колонку 'Событие'" visible="false" />
+					<menuitem id="showCategoryColumnHeaderItem" text="Показать колонку 'Категория'" visible="false" />
+					<menuitem id="showValueColumnHeaderItem" text="Показать колонку 'Фактическое значение'" visible="false" />
+					<menuitem id="showValueNoteColumnHeaderItem" text="Показать колонку 'Фактическое значение (примечание)'"
+						visible="false" />
+					<menuitem id="showForecastColumnHeaderItem" text="Показать колонку 'Прогноз'" visible="false" />
+					<menuitem id="showForecastNoteColumnHeaderItem" text="Показать колонку 'Прогноз (примечание)'" visible="false" />
+					<menuitem id="showPrevValueColumnHeaderItem" text="Показать колонку 'Предыдущее значение'" visible="false" />
+					<menuitem id="showPrevValueNoteColumnHeaderItem" text="Показать колонку 'Предыдущее значение (примечание)'"
+						visible="false" />
+					<menuitem id="showSourceColumnHeaderItem" text="Показать колонку 'Источник'" visible="false" />
+				</popupmenu>
+				<popupmenu id="tablePopup">
+					<menuitem id="setFilterTableItem" text="Установить фильтр" />
+				</popupmenu>
+			</table>
+		</scrollpane>
+	</panel>
+</frame>

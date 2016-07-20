@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<frame resizable="true" title="Фильтр" defaultCloseOperation="JFrame.DISPOSE"
+	IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
+	<panel name="interpanel">
+		<layout type="FormLayout" columns="10px, f:p:g, 10px:g, f:p:g, 10px:g, f:p:g, 10px:g, f:p:g, 10px" rows="10px, f:p, 1px, 15px:g, f:p, 15px:g, f:p, 10px:g" />
+
+		<panel constraints="2,2,7,1">
+			<layout type="FormLayout" columns="f:p, f:p, 10px:g, f:p, f:p, 10px:g, r:p" rows="f:p, 5px" />
+
+			<label constraints="1,1" name="ec.filters.label" text="Таблица:  " />
+			<label constraints="2,1" name="ec.filters.label.bold" text="Экономический календарь" />
+			<label constraints="4,1" name="ec.filters.label" text="Поле:  " />
+			<label constraints="5,1" name="ec.filters.label.bold" text="Важность" />
+			<checkbox constraints="7,1" name="ec.filters.checkbox" id="enableCheckBox" text="Включить" selected="true" />
+		</panel>
+
+		<separator constraints="2,3,7,1" />
+
+		<panel constraints="2,5">
+			<layout type="FormLayout" columns="f:p, 5px, f:p, 5px , f:p" rows="p" />
+
+			<checkbox constraints="1,1" id="high" name="HIGH" />
+			<label constraints="3,1" icon="configs/GRAPHITE/style/img/ecalendar/importance/high_importance.png" />
+			<label constraints="5,1" name="ec.filters.label" text="Высокая" />
+		</panel>
+
+		<panel constraints="4,5">
+			<layout type="FormLayout" columns="f:p, 5px, f:p, 5px , f:p" rows="p" />
+
+			<checkbox constraints="1,1" id="medium" name="MEDIUM" />
+			<label constraints="3,1" icon="configs/GRAPHITE/style/img/ecalendar/importance/medium_importance.png" />
+			<label constraints="5,1" name="ec.filters.label" text="Средняя" />
+		</panel>
+
+		<panel constraints="6,5">
+			<layout type="FormLayout" columns="f:p, 5px, f:p, 5px , f:p" rows="p" />
+
+			<checkbox constraints="1,1" id="low" name="LOW" />
+			<label constraints="3,1" icon="configs/GRAPHITE/style/img/ecalendar/importance/low_importance.png" />
+			<label constraints="5,1" name="ec.filters.label" text="Низкая" />
+		</panel>
+
+		<panel constraints="8,5">
+			<layout type="FormLayout" columns="f:p, 5px, f:p" rows="p" />
+
+			<checkbox constraints="1,1" id="none" name="NONE" />
+			<label constraints="3,1" name="ec.filters.label" text="Без важности" />
+		</panel>
+
+		<panel constraints="2,7,7,1">
+			<layout type="FormLayout" columns="10px:g, p:g, f:100px, 10px, f:100px, p, 10px" rows="f:p" />
+			<button constraints="3,1" name="ec.main_button" text="Применить" action="APPLY_ACTION" />
+			<button constraints="5,1" name="ec.main_button" text="Отменить" action="CANCEL_ACTION" />
+		</panel>
+
+	</panel>
+</frame>
