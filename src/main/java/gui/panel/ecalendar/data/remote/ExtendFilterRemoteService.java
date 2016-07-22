@@ -24,6 +24,8 @@ public class ExtendFilterRemoteService extends FilterRemoteService {
 	public void clearRequestParameters() {
 		importanceStateMap.clear();
 		countryStateMap.clear();
+		categoryStateMap.clear();
+		
 		clearColumnFiltersList();
 
 		currentStartDate.setTime(Calendar.getInstance().getTime());

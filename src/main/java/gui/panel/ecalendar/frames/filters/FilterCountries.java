@@ -11,7 +11,6 @@ import gui.panel.ecalendar.frames.parents.ExtendFilterFrame;
 import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
 import p.calendar.data.CalendarRow.COUNTRY;
-import p.calendar.data.CalendarRow.IMPORTANCE;
 
 public class FilterCountries extends ExtendFilterFrame<COUNTRY> {
 	public FilterCountries(RemoteService remote) {

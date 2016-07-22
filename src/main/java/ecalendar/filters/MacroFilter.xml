@@ -9,7 +9,7 @@
 		<button constraints="4,2" name="ec.main_button" text="Выбрать страны ..." id="showCountryButton" />
 
 		<label constraints="2,4" text="Категория:" />
-		<combobox constraints="4,4" id="categoryCombobox" />
+		<button constraints="4,4" name="ec.main_button" text="Выбрать категории ..." id="showCategoryButton" />
 
 		<label constraints="2,6" text="Важность:" />
 		<combobox constraints="4,6" id="importanceCombobox" />

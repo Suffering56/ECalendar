@@ -14,11 +14,9 @@ import gui.panel.ecalendar.frames.parents.AbstractDateFilter;
 import gui.panel.ecalendar.frames.util.macro.AbstractComboBoxModel;
 import gui.panel.ecalendar.frames.util.macro.BooleanComboEntity;
 import gui.panel.ecalendar.frames.util.macro.CheckBoxComboRenderer;
-import gui.panel.ecalendar.frames.util.macro.initClasses.CategoryComboModel;
 import gui.panel.ecalendar.frames.util.macro.initClasses.ImportanceComboModel;
 import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
-import p.calendar.data.CalendarRow.CATEGORY;
 import p.calendar.data.CalendarRow.IMPORTANCE;
 
 public class MacroFilter extends AbstractDateFilter {
@@ -36,13 +34,8 @@ public class MacroFilter extends AbstractDateFilter {
 
 	private void init() {
 		importanceModel = new ImportanceComboModel(remote.getImportanceStateMap());
-		categoryModel = new CategoryComboModel(remote.getCategoryStateMap());
-
 		importanceCombobox.setModel(importanceModel);
-		categoryCombobox.setModel(categoryModel);
-
 		importanceCombobox.setRenderer(new CheckBoxComboRenderer());
-		categoryCombobox.setRenderer(new CheckBoxComboRenderer());
 
 		ActionListener actionListener = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -63,13 +56,11 @@ public class MacroFilter extends AbstractDateFilter {
 		};
 
 		importanceCombobox.addActionListener(actionListener);
-		categoryCombobox.addActionListener(actionListener);
 	}
 
 	protected void applyFilter() {
 		applyDateFilter();
 		applyImportanceFilter();
-		applyCategoryFilter();
 
 		remote.sendDateRequest(startDate, endDate);
 	}
@@ -93,33 +84,23 @@ public class MacroFilter extends AbstractDateFilter {
 		remote.saveFilterState(COLUMN.Importance, newFilter);
 	}
 
-	private void applyCategoryFilter() {
-		List<CATEGORY> categoryFilterList = new ArrayList<CATEGORY>();
-		for (String key : categoryModel.getStateMap().keySet()) {
-			boolean selected = categoryModel.getStateMap().get(key);
-			if (selected) {
-				CATEGORY c = CATEGORY.valueOf(key);
-				categoryFilterList.add(c);
-			}
-		}
-		String newFilter = SearchFilter.Category_equals_(categoryFilterList);
-		remote.saveFilterState(COLUMN.Category, newFilter);
-	}
-
 	private void initShowCountryListener() {
 		showCountryButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new MacroCountriesFilter(remote).show();
 			}
 		});
+		
+		showCategoryButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new MacroCategoryFilter(remote).show();
+			}
+		});
 	}
 
 	// view
 	private JButton showCountryButton;
-
+	private JButton showCategoryButton;
 	private JComboBox importanceCombobox;
-	private JComboBox categoryCombobox;
-
 	private ImportanceComboModel importanceModel;
-	private CategoryComboModel categoryModel;
 }

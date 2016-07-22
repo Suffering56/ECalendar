@@ -175,9 +175,10 @@ public class FilterCategory extends FilterFrame {
 	 */
 	protected void applyFilter() {
 		List<CATEGORY> filterCollection = new ArrayList<CATEGORY>();
+		
 		for (String key : boxMap.keySet()) {
 			JCheckBox box = boxMap.get(key);
-
+			
 			if (stateMap.containsKey(key)) {
 				stateMap.put(key, box.isSelected());
 			}
@@ -192,7 +193,16 @@ public class FilterCategory extends FilterFrame {
 				}
 			}
 		}
-		String newFilter = SearchFilter.Category_equals_(filterCollection);
+		
+		String newFilter = "";
+		if (enableCheckBox.isSelected()) {
+			newFilter = SearchFilter.Category_equals_(filterCollection);
+		}
+		
+		sendRequest(newFilter);
+	}
+	
+	protected void sendRequest(String newFilter) {
 		remote.sendFilterRequest(COLUMN.Category, newFilter);
 	}
 
@@ -207,6 +217,7 @@ public class FilterCategory extends FilterFrame {
 
 	protected JPanel contentPanel;
 	private JCheckBox globalCheckBox;
+	protected JCheckBox enableCheckBox;
 
 	private Map<String, JCheckBox> boxMap = new HashMap<String, JCheckBox>();
 	private Map<String, Boolean> stateMap = new HashMap<String, Boolean>();
