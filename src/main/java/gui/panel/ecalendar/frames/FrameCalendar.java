@@ -37,8 +37,15 @@ import gui.panel.ecalendar.data.Converter;
 import gui.panel.ecalendar.data.ExtendCalendarRow;
 import gui.panel.ecalendar.data.JCalendarTableView;
 import gui.panel.ecalendar.data.remote.ExtendFilterRemoteService;
+import gui.panel.ecalendar.data.remote.RemoteService;
+import gui.panel.ecalendar.frames.filters.FilterCategory;
+import gui.panel.ecalendar.frames.filters.FilterCountries;
+import gui.panel.ecalendar.frames.filters.FilterDate;
+import gui.panel.ecalendar.frames.filters.FilterImportance;
 import gui.panel.ecalendar.frames.filters.MacroFilter;
 import gui.panel.ecalendar.frames.parents.DataFrame;
+import gui.panel.ecalendar.frames.parents.Enablable;
+import gui.panel.ecalendar.frames.parents.SwixFrame;
 import gui.panel.ecalendar.frames.renderers.HeaderRenderer;
 import gui.panel.ecalendar.frames.renderers.main.CountryRenderer;
 import gui.panel.ecalendar.frames.renderers.main.EventAreaRenderer;
@@ -47,7 +54,6 @@ import gui.panel.ecalendar.frames.renderers.main.LabelRenderer;
 import gui.panel.ecalendar.frames.renderers.main.NotesRenderer;
 import gui.panel.ecalendar.frames.renderers.main.SourceAreaRenderer;
 import gui.panel.ecalendar.frames.renderers.main.ValueRenderer;
-import gui.panel.ecalendar.frames.util.FilterSelector;
 import gui.panel.ecalendar.frames.util.ShowAndHidePopupManager;
 import gui.panel.ecalendar.frames.util.SortHandler;
 import gui.panel.ecalendar.frames.util.StyleKeeper;
@@ -55,15 +61,15 @@ import gui.panel.ecalendar.frames.util.timezone.LocalTimeZone;
 import gui.panel.ecalendar.frames.util.timezone.TimeZoneComboModel;
 import p.calendar.InfoCalendarAPI;
 
-public class FrameCalendar extends DataFrame {
+public class FrameCalendar extends DataFrame implements Enablable{
 
 	public FrameCalendar() {
+
 		render("ecalendar/FrameCalendar", false);
-		
+
 		frame.setMinimumSize(frame.getSize());
 		frame.setLocationRelativeTo(null);
 	}
-	
 
 	@Override
 	protected void beforeRenderInit() {
@@ -90,7 +96,6 @@ public class FrameCalendar extends DataFrame {
 		updateTimer.start();
 		repaintTime();
 	}
-	
 
 	public void updateModel(List<ExtendCalendarRow> rows) {
 		model.setSortColumn(remote.getCurrentSortColumn());
@@ -147,7 +152,7 @@ public class FrameCalendar extends DataFrame {
 					 * Вызов контекстного меню таблицы (TABLE POPUP).
 					 */
 					columnIndex = getColumnByPoint(e);
-					if (filter.isFilterColumn(columnIndex)) {
+					if (isFilterColumn(columnIndex)) {
 						tablePopup.show(table, e.getX() + 10, e.getY() + 10);
 					}
 				} else if (SwingUtilities.isLeftMouseButton(e)) {
@@ -171,7 +176,7 @@ public class FrameCalendar extends DataFrame {
 					/*
 					 * Вызов контекстного меню заголовка таблицы (HEADER POPUP).
 					 */
-					boolean isFilterColumn = filter.isFilterColumn(columnIndex);
+					boolean isFilterColumn = isFilterColumn(columnIndex);
 					setFilterHeaderItem.setVisible(isFilterColumn);
 
 					headerPopup.show(header, e.getX() + 10, e.getY() + 10);
@@ -192,9 +197,13 @@ public class FrameCalendar extends DataFrame {
 				/*
 				 * Клик по кнопке "Макростатистика-поиск"
 				 */
-				new MacroFilter(remote).show();
+				showMacro();
 			}
 		});
+	}
+
+	private void showMacro() {
+		showSecondaryFrame(new MacroFilter(this, remote));
 	}
 
 	private void initPopupListeners() {
@@ -221,7 +230,7 @@ public class FrameCalendar extends DataFrame {
 				/*
 				 * Пункт контекстного меню "Установить фильтр"
 				 */
-				filter.selectFilter(columnIndex, remote);
+				selectFilter(columnIndex);
 			}
 		};
 
@@ -337,7 +346,7 @@ public class FrameCalendar extends DataFrame {
 		int selectedRow = getRowByPoint(e);
 		if (rows != null) {
 			if (selectedRow < rows.size()) {
-				new FrameDetails(rows.get(selectedRow)).show();
+				showSecondaryFrame(new FrameDetails(this, rows.get(selectedRow)));
 			}
 		}
 	}
@@ -403,10 +412,64 @@ public class FrameCalendar extends DataFrame {
 		table.repaint();
 	}
 
+	/**
+	 * На основе columnIndex определяет, какой фильтр показать.
+	 */
+	private void selectFilter(int columnIndex) {
+		switch (columnIndex) {
+		case JCalendarTableView.DATE: {
+			showSecondaryFrame(new FilterDate(this, remote));
+		}
+			break;
+		case JCalendarTableView.COUNTRY: {
+			showSecondaryFrame(new FilterCountries(this, remote));
+		}
+			break;
+		case JCalendarTableView.IMPORTANCE: {
+			showSecondaryFrame(new FilterImportance(this, remote));
+		}
+			break;
+		case JCalendarTableView.CATEGORY: {
+			showSecondaryFrame(new FilterCategory(this, remote));
+		}
+			break;
+		default:
+			break;
+		}
+	}
+
+	/**
+	 * Проверяет, есть ли для данной колонки
+	 * форма для фильтрации.
+	 */
+	private boolean isFilterColumn(int columnIndex) {
+		switch (columnIndex) {
+		case JCalendarTableView.DATE:
+			return true;
+		case JCalendarTableView.COUNTRY:
+			return true;
+		case JCalendarTableView.IMPORTANCE:
+			return true;
+		case JCalendarTableView.CATEGORY:
+			return true;
+		default:
+			return false;
+		}
+	}
+
+	public void showSecondaryFrame(SwixFrame swixFrame) {
+		swixFrame.show();
+		swixFrame.enable();
+		this.disable();
+	}
+
+	public RemoteService getRemote() {
+		return remote;
+	}
+
 	//main
 	private final SortHandler sorter = new SortHandler();
 	private ShowAndHidePopupManager showHideManager;
-	private final FilterSelector filter = new FilterSelector();
 
 	private Timer timer;
 	private int columnIndex;

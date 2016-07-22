@@ -6,6 +6,8 @@ import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.util.Calendar;
 import java.util.List;
@@ -37,8 +39,10 @@ import gui.panel.ecalendar.frames.util.PDFBuilder;
 import p.calendar.data.CalendarRow.COUNTRY;
 
 public class FrameDetails extends DataFrame {
-	public FrameDetails(ExtendCalendarRow extRow) {
+	public FrameDetails(FrameCalendar primaryFrame, ExtendCalendarRow extRow) {
+		this.primaryFrame = primaryFrame;
 		this.extRow = extRow;
+		
 		render("ecalendar/FrameDetails");
 	}
 	
@@ -49,7 +53,7 @@ public class FrameDetails extends DataFrame {
 	}
 
 	@Override
-	protected void afterRenderInit() {
+	protected void afterRenderInit() {		
 		initComponents();
 		initTable();
 		initControls();
@@ -188,6 +192,14 @@ public class FrameDetails extends DataFrame {
 
 	private void initControls() {
 		initCommonListeners();
+		
+		frame.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				primaryFrame.enable();
+			}
+		});
+		
 		showMoreBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (chartBuilder != null) {
@@ -214,6 +226,7 @@ public class FrameDetails extends DataFrame {
 	}
 
 	// main
+	private FrameCalendar primaryFrame;
 	private ChartBuilder chartBuilder;
 	private ChartPanel chartPanel;
 

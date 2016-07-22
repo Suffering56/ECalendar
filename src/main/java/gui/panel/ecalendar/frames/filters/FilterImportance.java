@@ -3,14 +3,15 @@ package gui.panel.ecalendar.frames.filters;
 import javax.swing.JCheckBox;
 
 import gui.panel.ecalendar.data.remote.RemoteService;
+import gui.panel.ecalendar.frames.parents.Enablable;
 import gui.panel.ecalendar.frames.parents.ExtendFilterFrame;
 import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
 import p.calendar.data.CalendarRow.IMPORTANCE;
 
 public class FilterImportance extends ExtendFilterFrame<IMPORTANCE> {
-	public FilterImportance(RemoteService remote) {
-		super(remote);
+	public FilterImportance(Enablable enablable, RemoteService remote) {
+		super(enablable, remote);
 		stateMap = remote.getImportanceStateMap();
 		
 		render("ecalendar/filters/FilterImportance");

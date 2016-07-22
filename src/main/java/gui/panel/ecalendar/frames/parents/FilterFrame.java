@@ -7,11 +7,11 @@ import javax.swing.Action;
 
 import gui.panel.ecalendar.data.remote.RemoteService;
 
-public abstract class FilterFrame extends SwixFrame {
+public abstract class FilterFrame extends SecondaryFrame {
 
-	public FilterFrame(RemoteService remote) {
-		super();
-		this.remote = remote;
+	public FilterFrame(Enablable enablable, RemoteService remote) {
+		super(enablable);
+		this.remote =  remote;
 	}
 
 	abstract protected void applyFilter();
@@ -22,6 +22,7 @@ public abstract class FilterFrame extends SwixFrame {
 	public Action APPLY_ACTION = new AbstractAction() {
 		public void actionPerformed(ActionEvent e) {
 			if (e != null) {
+				enablable.enable();
 				applyFilter();
 				frame.dispose();
 			}

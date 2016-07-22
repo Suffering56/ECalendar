@@ -7,14 +7,15 @@ import javax.swing.Action;
 import javax.swing.JCheckBox;
 
 import gui.panel.ecalendar.data.remote.RemoteService;
+import gui.panel.ecalendar.frames.parents.Enablable;
 import gui.panel.ecalendar.frames.parents.ExtendFilterFrame;
 import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
 import p.calendar.data.CalendarRow.COUNTRY;
 
 public class FilterCountries extends ExtendFilterFrame<COUNTRY> {
-	public FilterCountries(RemoteService remote) {
-		super(remote);
+	public FilterCountries(Enablable enablable, RemoteService remote) {
+		super(enablable, remote);
 		stateMap = remote.getCountryStateMap();
 
 		render("ecalendar/filters/FilterCountries");

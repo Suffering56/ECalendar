@@ -24,8 +24,8 @@ import gui.panel.ecalendar.frames.util.timezone.LocalTimeZone;
 
 public abstract class AbstractDateFilter extends FilterFrame {
 
-	public AbstractDateFilter(RemoteService remote, String frameName) {
-		super(remote);
+	public AbstractDateFilter(Enablable enablable, RemoteService remote, String frameName) {
+		super(enablable, remote);
 		render(frameName);
 	}
 

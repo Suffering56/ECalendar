@@ -11,6 +11,7 @@ import javax.swing.SwingUtilities;
 
 import gui.panel.ecalendar.data.remote.RemoteService;
 import gui.panel.ecalendar.frames.parents.AbstractDateFilter;
+import gui.panel.ecalendar.frames.parents.Enablable;
 import gui.panel.ecalendar.frames.util.macro.AbstractComboBoxModel;
 import gui.panel.ecalendar.frames.util.macro.BooleanComboEntity;
 import gui.panel.ecalendar.frames.util.macro.CheckBoxComboRenderer;
@@ -19,14 +20,14 @@ import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
 import p.calendar.data.CalendarRow.IMPORTANCE;
 
-public class MacroFilter extends AbstractDateFilter {
+public class MacroFilter extends AbstractDateFilter implements Enablable {
 
-	public MacroFilter(RemoteService remote) {
-		super(remote, "ecalendar/filters/MacroFilter");
+	public MacroFilter(Enablable enablable, RemoteService remote) {
+		super(enablable, remote, "ecalendar/filters/MacroFilter");
 	}
 
 	@Override
-	protected void afterRenderInit(){
+	protected void afterRenderInit() {
 		super.afterRenderInit();
 		init();
 		initShowCountryListener();
@@ -87,15 +88,25 @@ public class MacroFilter extends AbstractDateFilter {
 	private void initShowCountryListener() {
 		showCountryButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MacroCountriesFilter(remote).show();
+				showCountry();
 			}
 		});
-		
+
 		showCategoryButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new MacroCategoryFilter(remote).show();
+				showCategory();
 			}
 		});
+	}
+
+	private void showCountry() {
+		new MacroCountriesFilter(this, remote).show();
+		disable();
+	}
+
+	private void showCategory() {
+		new MacroCategoryFilter(this, remote).show();
+		disable();
 	}
 
 	// view

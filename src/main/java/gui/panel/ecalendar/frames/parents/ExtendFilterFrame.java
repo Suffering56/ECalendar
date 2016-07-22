@@ -14,8 +14,8 @@ import gui.panel.ecalendar.data.remote.RemoteService;
 
 public abstract class ExtendFilterFrame<T> extends FilterFrame {
 
-	public ExtendFilterFrame(RemoteService remote) {
-		super(remote);
+	public ExtendFilterFrame(Enablable enablable, RemoteService remote) {
+		super(enablable, remote);
 	}
 
 	protected void init() {

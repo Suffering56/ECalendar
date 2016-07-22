@@ -1,12 +1,13 @@
 package gui.panel.ecalendar.frames.filters;
 
 import gui.panel.ecalendar.data.remote.RemoteService;
+import gui.panel.ecalendar.frames.parents.Enablable;
 import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
 
 public class MacroCountriesFilter extends FilterCountries {
-	public MacroCountriesFilter(RemoteService remote) {
-		super(remote);
+	public MacroCountriesFilter(Enablable enablable, RemoteService remote) {
+		super(enablable, remote);
 	}
 
 	@Override

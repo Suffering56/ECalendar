@@ -4,11 +4,12 @@ import javax.swing.JCheckBox;
 
 import gui.panel.ecalendar.data.remote.RemoteService;
 import gui.panel.ecalendar.frames.parents.AbstractDateFilter;
+import gui.panel.ecalendar.frames.parents.Enablable;
 
 public class FilterDate extends AbstractDateFilter {
 
-	public FilterDate(RemoteService remote) {
-		super(remote, "ecalendar/filters/FilterDate");
+	public FilterDate(Enablable enablable, RemoteService remote) {
+		super(enablable, remote, "ecalendar/filters/FilterDate");
 	}
 
 	@Override

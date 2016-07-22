@@ -17,14 +17,15 @@ import com.jgoodies.forms.layout.FormLayout;
 
 import gui.panel.ecalendar.data.Converter;
 import gui.panel.ecalendar.data.remote.RemoteService;
+import gui.panel.ecalendar.frames.parents.Enablable;
 import gui.panel.ecalendar.frames.parents.FilterFrame;
 import p.calendar.InfoCalendarAPI.COLUMN;
 import p.calendar.SearchFilter;
 import p.calendar.data.CalendarRow.CATEGORY;
 
 public class FilterCategory extends FilterFrame {
-	public FilterCategory(RemoteService remote) {
-		super(remote);
+	public FilterCategory(Enablable enablable, RemoteService remote) {
+		super(enablable, remote);
 		stateMap = remote.getCategoryStateMap();
 
 		render("ecalendar/filters/FilterCategory");
