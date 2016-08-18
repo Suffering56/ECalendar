@@ -179,7 +179,6 @@ public class FrameDetails extends DataFrame {
 
 	private void updateChart(List<ExtendCalendarRow> rows) {
 		boolean noData = chartBuilder.updateChart(rows);
-		chartLoadLabel.setVisible(false);
 
 		if (noData) {
 			chartViewPanel.setVisible(false);
@@ -206,7 +205,6 @@ public class FrameDetails extends DataFrame {
 					chartBuilder.getSeries().clear();
 					chartViewPanel.setVisible(false);
 					noChartLabel.setVisible(false);
-					chartLoadLabel.setVisible(true);
 
 					endDate = (Calendar) startDate.clone();
 					startDate.add(Calendar.YEAR, -2);
@@ -237,7 +235,6 @@ public class FrameDetails extends DataFrame {
 	private JTable table;
 	public JPanel chartViewPanel;
 	public JLabel noChartLabel;
-	private JLabel chartLoadLabel;
 	private JTableHeader header;
 	public JButton showMoreBtn;
 

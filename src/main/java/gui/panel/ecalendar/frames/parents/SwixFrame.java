@@ -28,8 +28,8 @@ public abstract class SwixFrame {
 			if (pack) {
 				pack();
 			}
-		} catch (Exception ex) {
-			System.out.println(this.getClass().getName() + ".renderException: " + ex);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	

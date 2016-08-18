@@ -1,79 +1,80 @@
 <?xml version="1.0" encoding="windows-1251"?>
-<frame resizable="true" defaultCloseOperation="JFrame.DISPOSE"
-	IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
+<frame resizable="true" defaultCloseOperation="JFrame.DISPOSE" IconImage="configs/GRAPHITE/style/img/ecalendar/prime.png">
 	<panel name="interpanel">
-		<layout type="FormLayout" columns="15px:g, 105px, 105px, 80px, 95px, 10px, 95px, 15px:g"
-			rows="p, 10px, 
-			f:30px, 1px, 
-			f:p, 3px, 
-			f:p, 3px, 
-			f:p, 3px, 
-			f:p:g, 10px, 
-			f:p, 10px, 
-			f:p, 10px" />
+		<layout type="FormLayout" columns="10px:g, f:p, 10px:g" rows="10px:g, f:p, 10px, f:p, 10px, f:p, 10px, f:p, 10px, f:p, 10px, f:p, 20px:g" />
 
-		<button constraints="5,3" name="ec.main_button" text="Печать" action="PRINT" />
-		<button constraints="7,3" name="ec.main_button" text="Копировать" action="COPY_TO_BUFFER" />
+		<panel constraints="2,2">
+			<layout type="FormLayout" columns="f:p:g, f:p, 10px, f:p" rows="f:p" />
 
-		<panel constraints="2,5,6,1" layout="FlowLayout(FlowLayout.LEFT)" border="EmptyBorder(-5,0,-5,0)">
+			<button constraints="2,1" name="ec.main_button" text="Экспорт в PDF" action="PRINT" />
+			<button constraints="4,1" name="ec.main_button" text="Копировать в буфер" action="COPY_TO_BUFFER" />
+		</panel>
+
+
+		<panel constraints="2,4" layout="FlowLayout(FlowLayout.LEFT)" border="EmptyBorder(-5,0,-5,0)">
 			<label id="eventDateLabel" />
 		</panel>
 
-		<panel constraints="2,7,6,1">
-			<layout type="FormLayout" columns="5px, l:125px, c:125px, l:80px, l:p:g" rows="5px, f:p, 5px, f:p, 10px" />
+		<panel constraints="2,6">
+			<layout type="FormLayout" columns="f:p, 20px, f:p, 20px, f:p, 20px, f:p, p:g" rows="1px, 5px, f:p, 10px, f:p, 5px, 1px" />
 
-			<label constraints="2,2" name="ec.details.label" text="Последний выпуск" />
-			<label constraints="2,4" name="ec.details.label" id="prevEventDateLabel" text="-" />
-			<label constraints="3,2" name="ec.details.label" text="Факт." />
-			<label constraints="3,4" name="ec.details.label" id="valueLabel" />
-			<label constraints="4,2" name="ec.details.label" text="Прогноз" />
-			<label constraints="4,4" name="ec.details.label" id="forecastLabel" />
-			<label constraints="5,2" name="ec.details.label" text="Пред." />
-			<label constraints="5,4" name="ec.details.label" id="prevValueLabel" />
+			<separator constraints="1,1,8,1" orientation="HORIZONTAL" />
+			<separator constraints="1,7,8,1" orientation="HORIZONTAL" />
+
+			<label constraints="1,3" name="ec.details.label" text="Последний выпуск" />
+			<label constraints="1,5" name="ec.details.label" id="prevEventDateLabel" text="-" />
+			<label constraints="3,3" name="ec.details.label" text="Факт." />
+			<label constraints="3,5" name="ec.details.label" id="valueLabel" />
+			<label constraints="5,3" name="ec.details.label" text="Прогноз" />
+			<label constraints="5,5" name="ec.details.label" id="forecastLabel" />
+			<label constraints="7,3" name="ec.details.label" text="Пред." />
+			<label constraints="7,5" name="ec.details.label" id="prevValueLabel" />
 
 		</panel>
 
-		<panel constraints="2,9,6,1">
-			<layout type="FormLayout" columns="5px, l:255px, 35px, p, 10px, f:p, 5px, l:p, 5px" rows="5px, f:p, 5px, f:p, 20px, t:p, 5px" />
+		<panel constraints="2,8">
+			<layout type="FormLayout" columns="f:p:g, 10px, 1px, 10px, f:p" rows="f:p" />
 
-			<textarea constraints="2,2,1,5" name="ec.details.area" id="eventDescriptionArea" columns="60" lineWrap="true"
-				rows="7" wrapStyleWord="true" editable="false" />
-			<separator constraints="4,2,1,5" orientation="VERTICAL" />
-
-			<label constraints="6,2" name="ec.details.label" text="Важность:" />
-			<label constraints="6,4" name="ec.details.label" text="Страна:" />
-			<label constraints="6,6" name="ec.details.label" text="Источник:" />
-
-			<label constraints="8,2" name="ec.details.label" id="importanceLabel" text="Средняя" />
-			<label constraints="8,4" name="ec.details.label" id="countryLabel" text="США" />
-			<textarea constraints="8,6" name="ec.details.area" id="sourceArea" lineWrap="true" wrapStyleWord="true"
+			<textarea constraints="1,1" name="ec.details.area" id="eventDescriptionArea" lineWrap="true" wrapStyleWord="true"
 				editable="false" />
+
+			<separator constraints="3,1" orientation="VERTICAL" />
+
+			<panel constraints="5,1">
+				<layout type="FormLayout" columns="f:p, 5px, f:p" rows="f:p, 5px, f:p, 5px, t:p" />
+
+				<label constraints="1,1" name="ec.details.label" text="Важность:" />
+				<label constraints="1,3" name="ec.details.label" text="Страна:" />
+				<label constraints="1,5" name="ec.details.label" text="Источник:" />
+
+				<label constraints="3,1" name="ec.details.label" id="importanceLabel" text="Средняя" />
+				<label constraints="3,3" name="ec.details.label" id="countryLabel" text="США" />
+				<textarea constraints="3,5" name="ec.details.area" id="sourceArea" lineWrap="true" wrapStyleWord="true"
+					editable="false" />
+			</panel>
 		</panel>
 
-		<panel constraints="2,11,6,1">
-			<layout type="FormLayout" columns="f:d:g" rows="f:d:g" />
+		<panel constraints="2,10">
+			<layout type="FormLayout" columns="f:500px" rows="f:p, 10px, f:160px" />
+
 			<panel constraints="1,1" id="chartViewPanel" visible="false" />
 			<label constraints="1,1" name="ec.details.label" id="noChartLabel" HorizontalAlignment="CENTER" visible="false"
 				text="Нет данных для построения диаграммы" />
-			<label constraints="1,1" id="chartLoadLabel" name="upper" HorizontalAlignment="CENTER" visible="true"
-				icon="configs/GRAPHITE/style/img/anim_wait.gif" text="Подождите, пожалуйста..." />
-		</panel>
 
-		<panel constraints="2,13,6,1">
-			<layout type="FormLayout" columns="f:p:g" rows="f:d:g" />
-
-			<panel constraints="1,1" id="loadingPanel" visible="true" PreferredSize="0, 160">
-				<layout type="FormLayout" columns="p:g, f:p, p:g" rows="p:g(0.3), f:p, p:g" />
-				<label constraints="2,2" name="upper" icon="configs/GRAPHITE/style/img/anim_wait.gif" text="Подождите, пожалуйста..." />
-			</panel>
-
-			<scrollpane constraints="1,1" id="tableScrollPane" visible="false" PreferredSize="0, 160">
+			<scrollpane constraints="1,3" id="tableScrollPane" visible="false">
 				<table id="table" name="ec.table" />
 			</scrollpane>
+
+			<panel constraints="1,1,1,3" id="loadingPanel">
+				<label name="upper" HorizontalAlignment="CENTER" visible="true" icon="configs/GRAPHITE/style/img/anim_wait.gif"
+					text="Подождите, пожалуйста..." />
+			</panel>
 		</panel>
 
-		<panel constraints="2,15,6,1">
-			<button id="showMoreBtn" name="ec.main_button" text="Показать еще за 2 года" />
+		<panel constraints="2,12">
+			<layout type="FormLayout" columns="p:g, f:p, p:g" rows="f:p" />
+
+			<button constraints="2,1" id="showMoreBtn" name="ec.main_button" text="Показать еще за 2 года" />
 		</panel>
 
 	</panel>
